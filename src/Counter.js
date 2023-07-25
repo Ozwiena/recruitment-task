@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Counter.css';
 
 export const Counter = () => {
-    const [count, setCount] = useState(0);
+    const [counter, setCounter] = useState(0);
+    const [message, setMessage] = useState('');
 
     const handleIncrease = () => {
-        setCount(count + 1);
+        setCounter(counter + 1);
     };
 
     const handleDecrease = () => {
-        setCount(count - 1);
+        setCounter(counter - 1);
     };
 
     const handleReset = () => {
-        setCount(0);
+        setCounter(0);
     };
+
+    useEffect(() => {
+        const messages = ['Yay', 'Wowzie', 'Bazinga'];
+        const index = Math.floor(Math.random() * 3);
+
+        setMessage(messages[index]);
+        setTimeout(() => {
+            setMessage('');
+          }, 3000);
+    }, [counter]);
 
     return (
     <section className="counter">
@@ -23,7 +34,8 @@ export const Counter = () => {
             <button className="button" onClick={handleDecrease}>-</button>
             <button className="button" onClick={handleReset}>Reset</button>
         </div>
-        <p>Counter: {count}</p>
+        <p>Counter: {counter}</p>
+        <p>{message}</p>
     </section>
     )
 };
