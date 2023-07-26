@@ -11,6 +11,14 @@
     width: 100px;
 }
 
+.sorter {
+    margin: 15px 58px;
+}
+
+.sorter_label--select {
+    margin-right: 5px;
+}
+
 .movie__table {
     display: table;
     width: 100vw;
