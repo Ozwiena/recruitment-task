@@ -22,9 +22,12 @@ export const Counter = () => {
         const index = Math.floor(Math.random() * 3);
 
         setMessage(messages[index]);
-        setTimeout(() => {
+
+        const timerId = setTimeout(() => {
             setMessage('');
           }, 3000);
+
+        return clearTimeout(timerId);
     }, [counter]);
 
     return (
