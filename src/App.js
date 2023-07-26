@@ -1,5 +1,6 @@
 import './App.css';
 import { Counter } from './Counter';
+import { Movies } from './Movies';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         Hello World
       </header>
       <Counter />
+      <Movies />
     </div>
   );
 }

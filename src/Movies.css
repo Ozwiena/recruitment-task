@@ -1,0 +1,42 @@
+.loader {
+    margin: 10px auto;
+}
+
+.error {
+    margin: 10px auto;
+}
+
+.reload {
+    margin: 10px auto;
+    width: 100px;
+}
+
+.movie__table {
+    display: table;
+    width: 100vw;
+    text-align: left;
+}
+
+.movie__id {
+    width: 40px;
+}
+
+.movie__title {
+    width: calc((100vw - 40px) / 4.5);
+}
+
+.movie__director {
+    width: calc((100vw - 40px) / 4.5);
+}
+
+.movie__year {
+    width: calc((100vw - 40px) / 9);
+}
+
+.movie__rating {
+    width: calc((100vw - 40px) / 4.5);
+}
+
+.table__header {
+    font-weight: bold;
+}

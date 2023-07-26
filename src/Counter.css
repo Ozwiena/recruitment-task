@@ -1,15 +1,16 @@
 .counter {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
     box-sizing: border-box;
     margin: 20px auto;
     border: 1px solid black;
     width: 120px;
-    height: 200px;
+    height: 150px;
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
+    justify-self: stretch;
 }
