@@ -24,11 +24,12 @@ export const Movies = () => {
         getData()
         .then((data) => {
             setMovies(data);
-            setIsLoading(false);
             setError(false);
         })
         .catch(() => {
             setError(true);
+        })
+        .finally(() => {
             setIsLoading(false);
         })
     }
@@ -75,8 +76,9 @@ export const Movies = () => {
     }
 
     if (error) {
-        return (<><div className="error">Error occurred</div>
-                <button className="reload" onClick={handleReload}>Load data again</button>
+        return (<>
+                    <div className="error">Error occurred</div>
+                    <button className="reload" onClick={handleReload}>Load data again</button>
                 </>)
     }
 
