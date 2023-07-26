@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './Counter.css';
 
 export const Counter = () => {
@@ -17,17 +17,26 @@ export const Counter = () => {
         setCounter(0);
     };
 
+    const timerRef = useRef(null);
+    const isFirstRender = useRef(true);
+
     useEffect(() => {
         const messages = ['Yay', 'Wowzie', 'Bazinga'];
         const index = Math.floor(Math.random() * 3);
 
-        setMessage(messages[index]);
+        if (!isFirstRender.current) {
+            setMessage(messages[index]);
+        }
 
-        const timerId = setTimeout(() => {
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+        }
+
+        timerRef.current = setTimeout(() => {
             setMessage('');
-          }, 3000);
+        }, 3000);
 
-        return clearTimeout(timerId);
+        isFirstRender.current = false;
     }, [counter]);
 
     return (
